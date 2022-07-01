@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <!--bootstrap css adding-->
+  </head>
+  <body>
+    <h1>calculator</h1>
+    <div class="calculator">
+        <div class="screen">
+            <div class="screen"><input type="text" id="display" value="0"></div>
+        </div>
+        <div class="btn1">
+            <div class="bnt2"><button class="btn" onclick="clr()">AC</button></div>
+            <div class="bnt2"><button class="btn" onclick="back()">C</button></div>
+            <div class="bnt2"><button class="btn" onclick="display('%')">%</button></div>
+            <div class="bnt2"><button class="btn" onclick="display('/')">/</button></div>
+        </div>
+        <div class="btn1">
+            <div class="bnt2"><button class="btn" onclick="display('7')">7</button></div>
+            <div class="bnt2"><button class="btn" onclick="display('8')">8</button></div>
+            <div class="bnt2"><button class="btn" onclick="display('9')">9</button></div>
+            <div class="bnt2"><button class="btn" onclick="display('*')">*</button></div>
+        </div>
+        <div class="btn1">
+            <div class="bnt2"><button class="btn" onclick="display('4')">4</button></div>
+            <div class="bnt2"><button class="btn" onclick="display('5')">5</button></div>
+            <div class="bnt2"><button class="btn" onclick="display('6')">6</button></div>
+            <div class="bnt2"><button class="btn" onclick="display('-')">-</button></div>
+        </div>
+        <div class="btn1">
+            <div class="bnt2"><button class="btn" onclick="display('1')">1</button></div>
+            <div class="bnt2"><button class="btn" onclick="display('2')">2</button></div>
+            <div class="bnt2"><button class="btn" onclick="display('3')">3</button></div>
+            <div class="bnt2"><button class="btn" onclick="display('+')">+</button></div>
+        </div>
+        <div class="btn1">
+            <div class="bnt2"><button class="btn" onclick="display('0')">0</button></div>
+            <div class="bnt2"><button class="btn" onclick="display('.')">.</button></div>
+            <div class="bnt2"><button class="btn" id="res" onclick="result()">=</button></div>
+            
+        </div>
+    
+    
+    </div>
+    <!--bootstrap java script adding -->
+    <script>
+        function clr(){
+            document.getElementById('display').value="";
+        }
+        function display(ch){
+            let d =  document.getElementById('display').value;
+            d+=ch;
+            document.getElementById('display').value=d;
+        }
+        function result(){
+            let d =  document.getElementById('display').value;
+            let res =eval(d);
+            document.getElementById('display').value=res;
+        }
+        function back(){
+            let d =  document.getElementById('display').value;
+           let t= d.substring(0, d.length - 1);
+           console.log(t);
+           document.getElementById('display').value=t;
+        }
+    </script>
+</html>
